@@ -59,6 +59,31 @@ class myArray{
         return maxVal;
     }
     
+    // remove the maximum Element from the array
+    public long removeMax(long maxVal){
+        maxVal = value[0];
+        for(int i = 0;i<numElements;i++){
+            if(value[i]>maxVal)
+                maxVal = value[i];
+        }
+        int j;
+        for(j=0;j<numElements;j++){
+            if(value[j]==maxVal)
+                break;
+        }
+        if(j==numElements)
+            return 0;
+        else
+        {
+            int k;
+            for(k=j;k<numElements;k++){
+                value[k] = value[k+1];
+                numElements--;
+            }
+        }
+        return maxVal;
+    }
+    
 }
 public class arrayOps {
     public static void main(String args[]){
@@ -85,6 +110,8 @@ public class arrayOps {
         }
         long maxVal = arr.getMax();
         System.out.println("The max value in the array is:"+maxVal);
+        long removeMaxVal = arr.removeMax(maxVal);
+        arr.display();
         
     }
     
