@@ -1,22 +1,22 @@
-// Program to find out whether a String is a permutation of the other or not
+package OCJP;
 import java.util.*;
 
 class StringPerm{
+	
+	public  ArrayList<Character> compute(String s){
+		char k[] = s.toCharArray();
+		ArrayList<Character> a = new ArrayList<Character>();
+		for(char val:k)
+			a.add(val);
+		Collections.sort(a);
+		return a;
+	}
+	
 	public boolean permutation(String s1,String s2){
 		if(s1.length() != s2.length())
 			return false;
-		char k1[] = s1.toCharArray();
-		char k2[] = s2.toCharArray();
-		ArrayList<Character> a1 = new ArrayList<Character>();
-		ArrayList<Character> a2 = new ArrayList<Character>();
-		for(char k:k1){
-			a1.add(k);
-		}
-		for(char k:k2){
-			a2.add(k);
-		}
-		Collections.sort(a1);
-		Collections.sort(a2);
+		ArrayList<Character> a1 = compute(s1);
+		ArrayList<Character> a2 = compute(s2);
 		if(a1.equals(a2))
 			return true;
 		return false;
