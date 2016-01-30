@@ -4,10 +4,14 @@ import java.util.*;
 class StringPerm{
 	
 	public  ArrayList<Character> compute(String s){
+		// Convert the string to character array 
 		char k[] = s.toCharArray();
+		// Create a generic ArrayList
 		ArrayList<Character> a = new ArrayList<Character>();
+		// Add the character elements to the ArrayList
 		for(char val:k)
 			a.add(val);
+		// Sort the individual characters
 		Collections.sort(a);
 		return a;
 	}
