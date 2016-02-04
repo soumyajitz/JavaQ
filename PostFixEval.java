@@ -1,6 +1,8 @@
 package OCJP;
 
 import java.util.*;
+
+// Create stack class
 class Stack1{
 	private int size;
 	private int[] stack;
@@ -39,7 +41,7 @@ class Stack1{
 			System.out.print(seekN(j));
 			System.out.print(' ');
 		}
-		System.out.println(" ");
+		System.out.println();
 	}
 	
 }
@@ -51,28 +53,30 @@ class PostFix{
 	public PostFix(String s){
 		in = s;
 	}
-	
+	// Method for parsing each and every element of the string and push it to stack
 	public int post(){
 		s = new Stack1(30);
 		char ch;
-		int j;
 		int pop1,pop2,ans;
 		
-		for(j=0;j<in.length();j++){
+		for(int j=0;j<in.length();j++){
 			ch = in.charAt(j);
 			s.display(" "+ch+" ");
+			// push the operands to stack
 			if(ch >= '0' && ch <= '9'){
 				s.push((int)(ch-'0'));
 			}
-			else {
-				pop1 = s.pop();
+			else
+			// if an operator is found, simply pop the last 2 numbers and operate it and push in the stack
+			{
 				pop2 = s.pop();
+				pop1 = s.pop();
 				switch(ch){
 				case '+': 
 					ans = pop1 + pop2;
 					break;
 				case '-': 
-					ans = pop1 - pop2;
+					ans = Math.abs(pop1 - pop2);
 					break;
 				case '*': 
 					ans = pop1 * pop2;
