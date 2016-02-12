@@ -23,13 +23,13 @@ class List{
 	public boolean isEmpty(){
 		return (first == null);
 	}
-	
+	// to be implemented for top insertion
 	public void insertFirst(int d){
 		Linked l = new Linked(d);
 		l.Link = first;
 		first = l;
 	}
-	
+	// to be implemented for top deletion
 	public int deleteFirst(){
 		Linked temp = first;
 		first = first.Link;
