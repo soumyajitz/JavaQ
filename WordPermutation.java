@@ -18,7 +18,7 @@ public class WordPermutation {
 			rotate(wordSize);
 		}
 	}
-	
+	// The rotate function takes a letter and then rotates the word, after which the letter is being put at last
 	public static void rotate(int wordSize){
 		int k;
 		int pos = size-wordSize;
@@ -28,7 +28,7 @@ public class WordPermutation {
 		}
 		arr[k-1] = t;
 	}
-	
+	// displays the permutation words
 	public static void display(){
 		if(count<99)
 			System.out.print(" ");
