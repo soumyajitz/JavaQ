@@ -12,10 +12,10 @@ public class MergeArray {
 			else
 				C[indexC++] = B[indexB++];
 		}
-		
+		// if B is empty
 		while(indexA<sizeA)
 			C[indexC++] = A[indexA++];
-		
+		// if C is empty
 		while(indexB<sizeB)
 			C[indexC++] = B[indexB++];
 	}
@@ -30,6 +30,6 @@ public class MergeArray {
 		int arrB[] = {3,6,18,79};
 		int merged[] = new int[arrA.length+arrB.length];
 		merge(arrA,arrA.length,arrB,arrB.length, merged);
-		showMergedArray(merged,8);
+		showMergedArray(merged,arrA.length+arrB.length);
 	}
 }
